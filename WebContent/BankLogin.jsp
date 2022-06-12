@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>User Login Page</title>
+<title>Bank Login Page</title>
 
 <!-- Font Icon -->
 <link rel="stylesheet"
@@ -25,19 +25,19 @@
 						<figure>
 							<img src="images/signin-image.jpg" alt="login image">
 						</figure>
-						<a href="UserRegistration.jsp" class="signup-image-link">Create an
+						<a href="BankRegistration.jsp" class="signup-image-link">Create an
 							account</a>
 					</div>
 
 					<div class="signin-form">
 						<h2 class="form-title">Login</h2>
-						<form method="post" action="UserLoginServlet" class="register-form"
+						<form method="post" action="BankLoginServlet" class="register-form"
 							id="login-form">
 							<div class="form-group">
-								<label for="username"><i
+								<label for="email"><i
 									class="zmdi zmdi-account material-icons-name"></i></label> <input
-									type="text" name="name" id="username"
-									placeholder="Your Name" />
+									type="email" name="email" id="email_id"
+									placeholder="Enter Email Address" />
 							</div>
 							<div class="form-group">
 								<label for="password"><i class="zmdi zmdi-lock"></i></label> <input
@@ -84,7 +84,7 @@
 	
 	 var obj=document.getElementById("status").value;
 	 if(obj=="failed"){
-		 swal("Sorry","Wrong user name or password","failed");
+		 swal("Sorry","Wrong email id or password","failed");
 	 }
 	</script>
 </body>
