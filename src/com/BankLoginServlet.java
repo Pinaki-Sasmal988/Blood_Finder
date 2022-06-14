@@ -41,7 +41,9 @@ public class BankLoginServlet extends HttpServlet {
 			 pst.setString(2,password);
 			 ResultSet rs =pst.executeQuery();
 			if(rs.next()){
-				session.setAttribute("email", rs.getString("email_id"));
+				String bankid=rs.getString("bank_id");
+				System.out.println(bankid);
+				request.setAttribute("bank_id", bankid);
 				 dispatcher = request.getRequestDispatcher("dashboard.jsp");
 			}
 			else{

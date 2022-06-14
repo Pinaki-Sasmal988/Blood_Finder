@@ -47,7 +47,7 @@ public class AreaSearch extends HttpServlet {
 			psmt.setString(1,area);
 			
 			rs=psmt.executeQuery();
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
+//			RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
 			
 			out.print("<html>"
 					+ "<head><title></title></head>"
@@ -71,7 +71,7 @@ public class AreaSearch extends HttpServlet {
 					+ "</body>"
 					+ "</html>");
 			
-			requestDispatcher.forward(request, response);
+//			requestDispatcher.forward(request, response);
 			con.close();
 			
 			

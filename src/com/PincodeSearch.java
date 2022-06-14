@@ -44,7 +44,8 @@ public class PincodeSearch extends HttpServlet {
 			psmt.setString(1,pincode);
 			
 			rs=psmt.executeQuery();
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
+//			RequestDispatcher requestDispatcher = request.getRequestDispatcher("debug1.jsp");
+//			requestDispatcher.forward(request, response);
 			
 			out.print("<html>"
 					+ "<head><title></title></head>"
@@ -60,7 +61,7 @@ public class PincodeSearch extends HttpServlet {
 						+ "<td>"+rs.getString("bank_name")+"</td>"
 						+ "<td>"
 						+ "<a href='/Todo_List/#/"+rs.getString("bank_id")+"' style='margin-right:20px'>"
-								+ "SEARCH</a>"
+								+ "DETAILS</a>"
 						+ "</td>"
 						+ "</tr>");
 			}
@@ -68,7 +69,7 @@ public class PincodeSearch extends HttpServlet {
 					+ "</body>"
 					+ "</html>");
 			
-			requestDispatcher.forward(request, response);
+			
 			con.close();
 			
 			

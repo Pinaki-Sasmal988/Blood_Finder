@@ -100,7 +100,7 @@
 	<script type="text/javascript">
 	
 	 var obj=document.getElementById("status").value;
-	 if(obj=="succes"){
+	 if(obj=="success"){
 		 swal("Congratualation","Your Account Created","success");
 	 }
 	</script>
