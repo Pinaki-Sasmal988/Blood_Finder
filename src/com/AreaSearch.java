@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -47,9 +48,14 @@ public class AreaSearch extends HttpServlet {
 			psmt.setString(1,area);
 			
 			rs=psmt.executeQuery();
-//			RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
 			
-			out.print("<html>"
+			ArrayList<String> obj=new ArrayList<String>();
+			while(rs.next()){
+				obj.add(rs.getString("bank_name"));
+			}
+	        request.setAttribute("data", obj);
+			/*out.print("<html>"
 					+ "<head><title></title></head>"
 					+ "<body>"
 					+ "<table border='1' width='800' align='center'>"
@@ -69,9 +75,9 @@ public class AreaSearch extends HttpServlet {
 			}
 			out.print("</table>"
 					+ "</body>"
-					+ "</html>");
+					+ "</html>");*/
 			
-//			requestDispatcher.forward(request, response);
+			requestDispatcher.forward(request, response);
 			con.close();
 			
 			
