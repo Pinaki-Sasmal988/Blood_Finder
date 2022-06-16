@@ -9,7 +9,7 @@
     --%>
   <%@page import="com.AreaSearch"%>
 <%@page import="java.util.*"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%--<%@page contentType="text/html" pageEncoding="UTF-8"%> --%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +17,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="X-UA-Compatible" content="text/html"> <%-- ie=edge --%>
 <title>User Home Page</title>
 <%--boostrap link --%>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -75,23 +75,7 @@
 		
 			<div class="container">
 			<br>
-						<h1 class="typewriter">A Drop of Blood Can Save a Life!!</h1>
-						
-						
-						
-				<table>
-				<tr>
-				    <th>Bank Name</th>
-				    <th>Find</th>
-				</tr>
-				<% ArrayList<String> obj= (ArrayList<String>)request.getAttribute("data");
-				for(int i=0;i<obj.size();i++){%>
-				<tr>
-				<td><%=obj.get(i) %></td>
-				<td>View</td>
-				</tr>
-				<%} %>
-				</table>		
+						<h1 class="typewriter">A Drop of Blood Can Save a Life!!</h1>	
 				
 				
 			</div>

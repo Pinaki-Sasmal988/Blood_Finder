@@ -47,9 +47,12 @@ public class AreaSearch extends HttpServlet {
 			psmt=con.prepareStatement(query);
 			psmt.setString(1,area);
 			
-			rs=psmt.executeQuery();
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
 			
+			rs=psmt.executeQuery();
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("UserViewTable.jsp");
+			
+			request.setAttribute("bank_name",rs.getString("bank_name"));
+			request.setAttribute("bank_id", String.valueOf(rs.getInt("bank_id")));
 			ArrayList<String> obj=new ArrayList<String>();
 			while(rs.next()){
 				obj.add(rs.getString("bank_name"));
