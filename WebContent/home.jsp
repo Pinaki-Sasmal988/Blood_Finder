@@ -9,7 +9,10 @@
     --%>
  <%--  <%@page import="com.AreaSearch"%>
 <%@page import="java.util.*"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>--%>
+<%--<%@page contentType="text/html" pageEncoding="UTF-8"%> --%>
+<%--- f3fb8bc5e7a51c08611946559465f2526aff0b74--%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +20,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="X-UA-Compatible" content="text/html"> <%-- ie=edge --%>
 <title>User Home Page</title>
 <%--boostrap link --%>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -47,9 +50,10 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
         </li>
       </ul>
-      <form class="d-flex" method="post" action="./AreaSearch">
+      <form class="d-flex"  action="/Blood_Finder/AreaSearchNew" method="post">
         <input class="form-control me-2" type="search"   name="area" placeholder="Search by area name" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input  type="submit"  class="btn btn-outline-success" value="search">
+        
       </form>
     </div>
   </div>
@@ -63,26 +67,16 @@
 		
 		
 			<div class="container">
+
 			
 				<h1 class="typewriter">A Drop of Blood Can Save a life!!</h1>
 						
 						
 						
-				<%-- <table>
-				<tr>
-				    <th>Bank Name</th>
-				    <th>Find</th>
-				</tr>
-				<% ArrayList<String> obj= (ArrayList<String>)request.getAttribute("data");
-				for(int i=0;i<obj.size();i++){%>
-				<tr>
-				<td><%=obj.get(i) %></td>
-				<td>View</td>
-				</tr>
-				<%} %>
-				</table>--%>		
 				
 				
+					
+			
 			</div>
 		
 

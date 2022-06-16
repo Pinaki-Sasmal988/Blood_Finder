@@ -28,7 +28,8 @@
         <li class="nav-item">
         <h2> <b><i><%=request.getAttribute("bank_name")%></i><b> </b>
         </li>
-        
+        <li><a href="">View</a></li>
+        </ul>
        
       
     </div>

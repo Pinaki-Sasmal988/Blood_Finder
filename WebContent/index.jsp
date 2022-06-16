@@ -48,13 +48,16 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="UserRegistration.jsp">UserResitration</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="UserRegistration.jsp">User Resitration</a></li>
+						<li class="nav-item mx-0 mx-lg-1">
+						
+
+						<a class="nav-link py-3 px-0 px-lg-3 rounded" href="UserLogin.jsp">User Login</a></li>
+
 						<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="UserLogin.jsp">UserLogin</a></li>
-						<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="BankRegistration.jsp">BankRegister</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="BankRegistration.jsp">Bank Register</a></li>
 					   <li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="BankLogin.jsp">BankLogin</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="BankLogin.jsp">Bank Login</a></li>
 					
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>

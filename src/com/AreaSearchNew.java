@@ -15,20 +15,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet("/AreaSearch")
-public class AreaSearch extends HttpServlet {
+@WebServlet("/AreaSearchNew")
+public class AreaSearchNew extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public AreaSearch() {
+   
+    public AreaSearchNew() {
         super();
+
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		
@@ -36,56 +33,38 @@ public class AreaSearch extends HttpServlet {
 		PreparedStatement psmt;
 		ResultSet rs;
 		
-		try
-		{
+		try{
+			
 			String driver="com.mysql.jdbc.Driver";
 			Class.forName(driver);
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/blood_finder?useSLL=false","root","");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/blood_finder","root","");
 			
 			String area=request.getParameter("area");
 			String query = "select * from blood_bank where location=?";
 			psmt=con.prepareStatement(query);
 			psmt.setString(1,area);
 			
+			RequestDispatcher requestDispatcher=request.getRequestDispatcher("UserViewTable.jsp");
 			rs=psmt.executeQuery();
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
-			
 			ArrayList<String> obj=new ArrayList<String>();
+			ArrayList<String> obj2=new ArrayList<String>();
 			while(rs.next()){
 				obj.add(rs.getString("bank_name"));
+				obj2.add(String.valueOf(rs.getInt("bank_id")));
 			}
-	        request.setAttribute("data", obj);
-			/*out.print("<html>"
-					+ "<head><title></title></head>"
-					+ "<body>"
-					+ "<table border='1' width='800' align='center'>"
-					+ "<tr>"
-					+ "<th>BANK NAME</th>"
-					+ "</tr>"
-					);
-			while(rs.next())
-			{
-				out.print("<tr>"
-						+ "<td>"+rs.getString("bank_name")+"</td>"
-						+ "<td>"
-						+ "<a href='#/"+rs.getString("bank_id")+"' style='margin-right:20px'>"
-								+ "SEARCH</a>"
-						+ "</td>"
-						+ "</tr>");
-			}
-			out.print("</table>"
-					+ "</body>"
-					+ "</html>");*/
-			
+			request.setAttribute("data", obj);
+			request.setAttribute("data2", obj2);
 			requestDispatcher.forward(request, response);
 			con.close();
-			
-			
 		}
-		catch(Exception e)
-		{
-			out.println(e);
+		catch(Exception e){
+			out.print(e);
 		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		doGet(request, response);
 	}
 
 }
