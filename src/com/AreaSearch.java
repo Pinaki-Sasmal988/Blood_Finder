@@ -68,7 +68,7 @@ public class AreaSearch extends HttpServlet {
 				out.print("<tr>"
 						+ "<td>"+rs.getString("bank_name")+"</td>"
 						+ "<td>"
-						+ "<a href='/Todo_List/#/"+rs.getString("bank_id")+"' style='margin-right:20px'>"
+						+ "<a href='#/"+rs.getString("bank_id")+"' style='margin-right:20px'>"
 								+ "SEARCH</a>"
 						+ "</td>"
 						+ "</tr>");

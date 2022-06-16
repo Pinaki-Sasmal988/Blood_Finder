@@ -7,12 +7,11 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
-
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
-<meta name="author" content="" />
+<meta name="author" content=""/>
 <title>index page</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -33,7 +32,6 @@
 
 	<!-- Masthead-->
 	 <header class="masthead bg-primary text-white text-center">
-	
 			<!-- Masthead Avatar Image-->
 				<nav
 		class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
@@ -52,7 +50,7 @@
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="UserRegistration.jsp">UserResitration</a></li>
 						<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="UserLogin.jsp">UserLoin</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="UserLogin.jsp">UserLogin</a></li>
 						<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="BankRegistration.jsp">BankRegister</a></li>
 					   <li class="nav-item mx-0 mx-lg-1"><a
@@ -97,7 +95,7 @@
 				</div>
 				<div class="divider-custom-line"></div>
 			</div>
-			<h1 class="masthead-heading text-uppercase mb-0">Welcome To Our Application</h1>
+			<h1 class="masthead-heading text-uppercase mb-0">Welcome To Our Platform</h1>
 			<!-- Icon Divider-->
 			
 			<!-- Masthead Subheading-->
@@ -244,20 +242,20 @@
 						class="fab fa-fw fa-dribbble"></i></a>
 				</div>
 				<!-- Footer About Text-->
-				<div class="col-lg-4">
+				<%--- <div class="col-lg-4">
 					<h4 class="text-uppercase mb-4">About Freelancer</h4>
 					<p class="lead mb-0">
 						Freelance is a free to use, MIT licensed Bootstrap theme created
 						by <a href="http://startbootstrap.com">Start Bootstrap</a> .
 					</p>
-				</div>
+				</div>--%>
 			</div>
 		</div>
 	</footer>
 	<!-- Copyright Section-->
 	<div class="copyright py-4 text-center text-white">
 		<div class="container">
-			<small>Copyright &copy; Your Website 2021</small>
+			<small>Copyright &copy; Your Website 2022</small>
 		</div>
 	</div>
 	<!-- Portfolio Modals-->

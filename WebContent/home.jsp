@@ -7,9 +7,9 @@
        }
     
     --%>
-  <%@page import="com.AreaSearch"%>
+ <%--  <%@page import="com.AreaSearch"%>
 <%@page import="java.util.*"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>--%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +25,6 @@
 <!-- Main css -->
 
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/auto.css">
 </head>
 <body>
 <%--navbar --%>
@@ -43,23 +42,13 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
+       
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
         </li>
       </ul>
       <form class="d-flex" method="post" action="./AreaSearch">
-        <input class="form-control me-2" type="search" name="area" placeholder="Search by area name" aria-label="Search">
+        <input class="form-control me-2" type="search"   name="area" placeholder="Search by area name" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
@@ -74,12 +63,12 @@
 		
 		
 			<div class="container">
-			<br>
-						<h1 class="typewriter">A Drop of Blood Can Save a Life!!</h1>
+			
+				<h1 class="typewriter">A Drop of Blood Can Save a life!!</h1>
 						
 						
 						
-				<table>
+				<%-- <table>
 				<tr>
 				    <th>Bank Name</th>
 				    <th>Find</th>
@@ -91,7 +80,7 @@
 				<td>View</td>
 				</tr>
 				<%} %>
-				</table>		
+				</table>--%>		
 				
 				
 			</div>
@@ -114,6 +103,36 @@
 	 }
 	</script>
 </body>
+<style>
 
-  
+h1{
+    font-family: "Incosolata", Consolas, monospace;
+    font-size: 3.7em;
+    color: black;
+}
+.typewriter{
+    position: relative;
+}
+.typewriter::after{
+    content: '|';
+    position: absolute;
+    right: 0;
+   
+    color: black;
+    background-color: white;
+    width: 100%;
+    animation: typing 10s steps(70) alternate 3s infinite,
+                line infinite;
+}
+@keyframes typing{
+    to{
+        width: 0%;
+    }
+}
+@keyframes line {
+    50%{
+        color:transparent;
+    }
+}
+</style>
 </html>

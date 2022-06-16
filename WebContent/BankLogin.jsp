@@ -12,8 +12,26 @@
 
 <!-- Main css -->
 <link rel="stylesheet" href="css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-gray">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.jsp"><img src="images/logo.png" width="80"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+         <h3> <a class="nav-link active" aria-current="page" href="index.jsp">Home</a></h3>
+        </li>
+       
+    </div>
+  </div>
+</nav>
+    
 <input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
 	<div class="main">
 

@@ -12,8 +12,30 @@
 
 <!-- Main css -->
 <link rel="stylesheet" href="css/style.css">
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ 
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.jsp"><img src="images/logo.png" width="90" height="20"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        <h2> <b><i><%=request.getAttribute("bank_name")%></i><b> </b>
+        </li>
+        
+       
+      
+    </div>
+  </div>
+</nav>
+ 
+
 <input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
 	<div class="main">
 
@@ -32,35 +54,35 @@
 									type=hidden name="bank_id" id="bank_id" value="${bank_id}" />
 							</div>
 							<div class="form-group">
-								<label for="A+ Blood Group"><i class="zmdi zmdi-lock-outline"></i></label>
+								<label for="A+ Blood Group"></label>
 								<input type="text" name="a+" id="a+" placeholder="Enter A+ Blood Group Units" />
 							</div>
 							<div class="form-group">
-								<label for="B+ Blood Group"><i class="zmdi zmdi-lock-outline"></i></label>
+								<label for="B+ Blood Group"></label>
 								<input type="text" name="b+" id="b+" placeholder="Enter B+ Blood Group Units" />
 							</div>
 							<div class="form-group">
-								<label for="O+ Blood Group"><i class="zmdi zmdi-lock-outline"></i></label>
+								<label for="O+ Blood Group"></i></label>
 								<input type="text" name="o+" id="o+" placeholder="Enter O+ Blood Group Units" />
 							</div>
 							<div class="form-group">
-								<label for="AB+ Blood Group"><i class="zmdi zmdi-lock-outline"></i></label>
+								<label for="AB+ Blood Group"></i></label>
 								<input type="text" name="ab+" id="ab+" placeholder="Enter AB+ Blood Group Units" />
 							</div>
 							<div class="form-group">
-								<label for="A- Blood Group"><i class="zmdi zmdi-lock-outline"></i></label>
+								<label for="A- Blood Group"></label>
 								<input type="text" name="a-" id="a-" placeholder="Enter A- Blood Group Units" />
 							</div>
 							<div class="form-group">
-								<label for="B- Blood Group"><i class="zmdi zmdi-lock-outline"></i></label>
+								<label for="B- Blood Group"></label>
 								<input type="text" name="b-" id="b-" placeholder="Enter B- Blood Group Units" />
 							</div>
 							<div class="form-group">
-								<label for="O- Blood Group"><i class="zmdi zmdi-lock-outline"></i></label>
+								<label for="O- Blood Group"></label>
 								<input type="text" name="o-" id="o-" placeholder="Enter O- Blood Group Units" />
 							</div>
 							<div class="form-group">
-								<label for="AB- Blood Group"><i class="zmdi zmdi-lock-outline"></i></label>
+								<label for="AB- Blood Group"></label>
 								<input type="text" name="ab-" id="ab-" placeholder="Enter AB- Blood Group Units" />
 							</div>
 							
@@ -72,10 +94,9 @@
 					</div>
 					<div class="signup-image">
 						<figure>
-							<img src="images/signup-image.jpg" alt="sing up image">
+							<img src="https://www.thenews.com.pk/assets/uploads/akhbar/2020-02-02/607787_060719_updates.jpg" alt="">
 						</figure>
-						<a href="BankLogin.jsp" class="signup-image-link">I am already
-							member</a>
+						
 					</div>
 				</div>
 			</div>
