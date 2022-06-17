@@ -4,7 +4,7 @@
 <html>
 
 <%@page import="com.AreaSearchNew"%>
-<%@page import="com.*"%>
+<%@page import="com.SetGet"%>
 <%@page import="java.util.*"%>
 
 <head>
@@ -31,11 +31,11 @@
 				<tr>
 				<td><%=obj.get(i) %></td>
 				<td>
-				   <div class="form-group form-button">
-							<input type="submit" name="signup" id="signup"
-								class="form-submit" value="View" onClick="<%=ob.set_bank_id(obj2.get(i)) %>" />
-							</div>
-				  
+				<%-- <div class="form-group form-button">
+						<input type="submit" name="signup" id="signup"
+						class="form-submit" value="View" onClick="<%=ob.setter(obj2.get(i))%>" />
+					</div>--%>
+				   <a href="./UserViewServlet/<%=obj2.get(i)%>">View</a>
 				</td>
 				</tr>
 				<%} %>

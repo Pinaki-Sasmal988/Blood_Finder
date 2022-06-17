@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/UserViewServlet")
+
 public class UserViewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -25,10 +25,6 @@ public class UserViewServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		
@@ -42,20 +38,20 @@ public class UserViewServlet extends HttpServlet {
 			Class.forName(driver);
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/blood_finder?useSLL=false","root","");
 			
-			//String bank_name=request.getParameter("bank_name");
-			//String bank_id=request.getParameter("bank_id");
-			 String uri=request.getRequestURI();
-			 String[] a=uri.split("/");
-			 int bank_id=Integer.parseInt(a[a.length-1]);
-			 
+			 SetGet ob=new SetGet();
+			 String uri=request.getPathInfo();
+			 System.out.println(uri);
+				String[] arr= uri.split("/");
+				String bank_id=arr[arr.length-1];
+				
 			String query1 = "select * from blood_bank where bank_id=?";
 			psmt1=con.prepareStatement(query1);
-			psmt1.setInt(1,bank_id);
+			psmt1.setInt(1,Integer.parseInt(bank_id));
 			rs1=psmt1.executeQuery();
 			
 			String query2 = "select * from blood_details where bank_id=?";
 			psmt2=con.prepareStatement(query2);
-			psmt2.setString(1,String.valueOf(bank_id));
+			psmt2.setString(1,bank_id);
 			rs2=psmt2.executeQuery();
 			
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("UserView.jsp");
@@ -67,10 +63,8 @@ public class UserViewServlet extends HttpServlet {
 				obj1.add(rs1.getString("email_id"));
 				obj1.add(rs1.getString("location"));
 				obj1.add(rs1.getString("pin"));
-			}
-	        SetGet ob=new SetGet(); 
-	        ob.set_bank_id(String.valueOf(bank_id));
-	        
+			} 
+			request.setAttribute("bank_data", obj1);
 	        
 	        ArrayList<String> obj2=new ArrayList<String>();
 			while(rs2.next()){
@@ -94,5 +88,9 @@ public class UserViewServlet extends HttpServlet {
 		{
 			out.println(e);
 		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request,response);
 	}
 }
