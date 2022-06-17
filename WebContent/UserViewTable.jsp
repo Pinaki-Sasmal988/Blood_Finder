@@ -31,11 +31,7 @@
 				<tr>
 				<td><%=obj.get(i) %></td>
 				<td>
-				<%-- <div class="form-group form-button">
-						<input type="submit" name="signup" id="signup"
-						class="form-submit" value="View" onClick="<%=ob.setter(obj2.get(i))%>" />
-					</div>--%>
-				   <a href="./UserViewServlet/<%=obj2.get(i)%>">View</a>
+				<a href="/Blood_Finder/UserViewServlet?val=<%=obj2.get(i) %>">View</a>
 				</td>
 				</tr>
 				<%} %>

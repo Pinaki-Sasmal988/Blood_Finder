@@ -3,8 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-<%@page import="com.AreaSearchNew"%>
-<%@page import="com.SetGet"%>
+<%@page import="com.*"%>
 <%@page import="java.util.*"%>
 
 <head>
@@ -35,8 +34,9 @@
 				<%
 				String[] a={"A+","B+","O+","AB+","A-","B-","O-","AB-"};
 				ArrayList<String> obj2= (ArrayList<String>)request.getAttribute("blood_data");
-				for(int i=0;i<obj1.size();i++){%>
+				for(int i=0;i<obj2.size();i++){%>
 				<tr>
+				<td><%=a[i] %></td>
 				<td><%=obj2.get(i) %></td>
 				</tr>
 				<%} %>

@@ -38,11 +38,7 @@ public class UserViewServlet extends HttpServlet {
 			Class.forName(driver);
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/blood_finder?useSLL=false","root","");
 			
-			 SetGet ob=new SetGet();
-			 String uri=request.getPathInfo();
-			 System.out.println(uri);
-				String[] arr= uri.split("/");
-				String bank_id=arr[arr.length-1];
+			 String bank_id=request.getParameter("val");
 				
 			String query1 = "select * from blood_bank where bank_id=?";
 			psmt1=con.prepareStatement(query1);
