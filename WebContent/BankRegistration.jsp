@@ -13,7 +13,11 @@
 <!-- Main css -->
 <link rel="stylesheet" href="css/style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+<style>
+h6{
+color:red;
+}
+</style>
 </head>
 <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-gray">
@@ -51,7 +55,8 @@
 							</div>
 							<div class="form-group">
 								<label for="contact"><i class="zmdi zmdi-lock-outline"></i></label>
-								<input type="text" name="contact" id="contact" placeholder="Contact no" />
+								<input type="text" name="contact" onkeyup="test(this)" id="contact" placeholder="Contact no" />
+								<h6 id="result"></h6>
 							</div>
 							<div class="form-group">
 								<label for="email"><i
@@ -60,12 +65,13 @@
 							</div>
 							<div class="form-group">
 								<label for="pass"><i class="zmdi zmdi-lock"></i></label> <input
-									type="password" name="password" id="pass" placeholder="Password" />
+									type="password" name="password" id="password" placeholder="Password" />
 							</div>
 							<div class="form-group">
 								<label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-								<input type="password" name="re_pass" id="re_pass"
+								<input type="password" onkeyup="check(this)" name="re_pass" id="re_pass"
 									placeholder="Repeat your password" />
+									  <h6 id="res"></h6>
 							</div>
 							<div class="form-group">
 								<label for="address"><i
@@ -121,6 +127,42 @@
 	 if(obj=="success"){
 		 swal("Congratualation","Your Account Created","success");
 	 }
+	 
+	 var password=document.getElementById('password');
+	  function check(ele){
+	        if(ele.value.length>0){
+	            if(ele.value != password.value){
+	              document.getElementById('res').innerText="password does't mach";
+	            }else{
+	                document.getElementById('res').innerText="";
+
+	            }
+	        }else{
+	            document.getElementById('res').innerText="Enter confirm password";
+
+	        }
+	    }
+	 
+	  function test(ele){
+
+	        if(isNaN(ele.value)){
+	          document.getElementById('result').style.color="red";
+	           //document.getElementById('result').innerText="Enter Only Number";
+	           alert("Enter Only Number");
+	        }
+	        else
+	        {
+	            document.getElementById('result').innerText="";
+
+	            if(ele.value.length >10){
+	               // document.getElementById('result').innerText="mobile number only will be 10 digit ";
+                 alert("mobile number only will be 10 digit");
+	            }
+	            
+	        }
+	          
+	    }
+	 
 	</script>
 
 </body>

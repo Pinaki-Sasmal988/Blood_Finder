@@ -1,3 +1,13 @@
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%
+       if(session.getAttribute("name")==null){
+    	   response.sendRedirect("BankLogin.jsp");
+       }
+     
+    
+    %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,11 +36,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-        <h2> <b><i><%=request.getAttribute("bank_name")%></i><b> </b>
+        <h2> <b><i><%=session.getAttribute("name")%></i><b> </b>
         </li>
         <li><a href="">View</a></li>
         </ul>
-       
+       <a href="BankLogout">Logout</a>
       
     </div>
   </div>

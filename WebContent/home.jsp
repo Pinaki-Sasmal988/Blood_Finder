@@ -1,12 +1,13 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%--
-       if(session.getAttribute("user_name")==null){
+    <%
+       if(session.getAttribute("name")==null){
     	   response.sendRedirect("UserLogin.jsp");
        }
+     
     
-    --%>
+    %>
  <%--  <%@page import="com.AreaSearch"%>
 <%@page import="java.util.*"%>
 
@@ -43,7 +44,7 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#"><b>Welcome <%=session.getAttribute("name") %></b></a>
         </li>
        
         <li class="nav-item">
@@ -52,9 +53,12 @@
       </ul>
       <form class="d-flex"  action="/Blood_Finder/AreaSearchNew" method="post">
         <input class="form-control me-2" type="search"   name="area" placeholder="Search by area name" aria-label="Search">
-        <input  type="submit"  class="btn btn-outline-success" value="search">
+        <input  type="submit"  class="btn btn-outline-success sear" value="search">
         
       </form>
+       
+          <a class="nav-link link" href="Logout"><b>Logout</b></a>
+       
     </div>
   </div>
 </nav>
@@ -128,5 +132,11 @@ h1{
         color:transparent;
     }
 }
+.link{
+background-color:black;
+color:white;
+margin-left:2px;}
+.sear{
+width:80px;}
 </style>
 </html>
