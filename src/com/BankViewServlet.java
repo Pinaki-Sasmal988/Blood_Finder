@@ -50,7 +50,7 @@ public class BankViewServlet extends HttpServlet {
 			psmt2.setString(1,bank_id);
 			rs2=psmt2.executeQuery();
 			
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("UserView.jsp");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("BankView.jsp");
 			
 			ArrayList<String> obj1=new ArrayList<String>();
 			while(rs1.next()){
@@ -59,6 +59,7 @@ public class BankViewServlet extends HttpServlet {
 				obj1.add(rs1.getString("email_id"));
 				obj1.add(rs1.getString("location"));
 				obj1.add(rs1.getString("pin"));
+				obj1.add(bank_id);
 			} 
 			request.setAttribute("bank_data", obj1);
 	        

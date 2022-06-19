@@ -22,10 +22,42 @@
 	<h1><%=obj1.get(0)%></h1>
 	<div class="container">
 		<div class="row row-cols-2">
-			<div><%=obj1.get(1)%></div>
-			<div><%=obj1.get(2)%></div>
-			<div><%=obj1.get(3)%></div>
-			<div><%=obj1.get(4)%></div>
+			<div>
+				<div><%=obj1.get(1)%></div>
+				<form action="UpdatePage.jsp" method="post">
+					<input type="submit" value="Edit">
+					<input type="hidden" value="<%=obj1.get(5) %>" name="bank_id">
+					<input type="hidden" value="phone" name="attribute_name">
+					<input type="hidden" value="blood_bank" name="table_name">
+				</form>
+			</div>
+			<div>
+				<div><%=obj1.get(2)%></div>
+				<form action="UpdatePage.jsp" method="post">
+					<input type="submit" value="Edit">
+					<input type="hidden" value="<%=obj1.get(5) %>" name="bank_id">
+					<input type="hidden" value="email" name="attribute_name">
+					<input type="hidden" value="blood_bank" name="table_name">
+				</form>
+			</div>
+			<div>
+				<div><%=obj1.get(3)%></div>
+				<form action="UpdatePage.jsp" method="post">
+					<input type="submit" value="Edit">
+					<input type="hidden" value="<%=obj1.get(5)%>" name="bank_id">
+					<input type="hidden" value="location" name="attribute_name">
+					<input type="hidden" value="blood_bank" name="table_name">
+				</form>
+			</div>
+			<div>
+				<div><%=obj1.get(4)%></div>
+				<form action="UpdatePage.jsp" method="post">
+					<input type="submit" value="Edit">
+					<input type="hidden" value="<%=obj1.get(5)%>" name="bank_id">
+					<input type="hidden" value="pin" name="attribute_name">
+					<input type="hidden" value="blood_bank" name="table_name">
+				</form>
+			</div>
 			<div>
 			</div>
 		</div>
@@ -45,12 +77,12 @@
 				<tr>
 					<td><%=a[i] %></td>
 					<td><%=obj2.get(i) %></td>
-					<td><h6>Hi Sir</h6></td>
 					<td>
-					<button>Value</button>
-						<form action="/UpdateBankView" method="post">
+						<form action="UpdatePage.jsp" method="post">
 							<input type="submit" value="Edit">
-							<input type="hidden" value="<%=request.getAttribute("bank_id") %>">
+							<input type="hidden" value="<%=obj1.get(5) %>" name="bank_id">
+							<input type="hidden" value="<%=i %>" name="attribute_name">
+							<input type="hidden" value="blood_details" name="table_name">
 						</form>
 					</td>
 				</tr>
