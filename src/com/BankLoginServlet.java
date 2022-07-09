@@ -41,12 +41,19 @@ public class BankLoginServlet extends HttpServlet {
 			 pst.setString(2,password);
 			 ResultSet rs =pst.executeQuery();
 			if(rs.next()){
+
 				String bankid=rs.getString("bank_id");
 				//String bankname=rs.getString("bank_name");
 				//System.out.println(bankid);
 				request.setAttribute("bank_id", bankid);
 				//request.setAttribute("bank_name", bankname);
 				session.setAttribute("name", rs.getString("bank_name"));
+
+				String bank_id=rs.getString("bank_id");
+				String bankname=rs.getString("bank_name");
+				request.setAttribute("bank_id", bank_id);
+				request.setAttribute("bank_name", bankname);
+
 				 dispatcher = request.getRequestDispatcher("dashboard.jsp");
 			}
 			else{

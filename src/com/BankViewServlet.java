@@ -15,11 +15,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-public class UserViewServlet extends HttpServlet {
+@WebServlet("/BankViewServlet")
+public class BankViewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public UserViewServlet() {
+    public BankViewServlet() {
         super();
 
     }
@@ -50,7 +50,7 @@ public class UserViewServlet extends HttpServlet {
 			psmt2.setString(1,bank_id);
 			rs2=psmt2.executeQuery();
 			
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("UserView.jsp");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("BankView.jsp");
 			
 			ArrayList<String> obj1=new ArrayList<String>();
 			while(rs1.next()){
@@ -59,6 +59,7 @@ public class UserViewServlet extends HttpServlet {
 				obj1.add(rs1.getString("email_id"));
 				obj1.add(rs1.getString("location"));
 				obj1.add(rs1.getString("pin"));
+				obj1.add(bank_id);
 			} 
 			request.setAttribute("bank_data", obj1);
 	        

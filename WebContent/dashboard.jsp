@@ -24,7 +24,16 @@
 <link rel="stylesheet" href="css/style.css">
 
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <style>
+ .view{
+	 color:black;
+	 padding:20px;
+	 margin-left:10px;
+	 text-decoration:none
+	 
  
+ }
+ </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -38,7 +47,7 @@
         <li class="nav-item">
         <h2> <b><i><%=session.getAttribute("name")%></i><b> </b>
         </li>
-        <li><a href="">View</a></li>
+        <li><a href="/Blood_Finder/BankViewServlet?val=<%=request.getAttribute("bank_id")%>" class="view">View</a></li>
         </ul>
        <a href="BankLogout">Logout</a>
       
